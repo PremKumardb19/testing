@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../App.css"
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -19,7 +20,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
