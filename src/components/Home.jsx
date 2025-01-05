@@ -3,22 +3,42 @@ import axios from "axios";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("https://a02d-2401-4900-234e-cda-b8cf-a3c5-b118-a839.ngrok-free.app/api/auth/users");
-        if (Array.isArray(res)) {
-          setUsers(res);
+        const res = await axios.get(
+          "https://a02d-2401-4900-234e-cda-b8cf-a3c5-b118-a839.ngrok-free.app/api/auth/users",
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true", // Skip ngrok warning page
+            },
+          }
+        );
+        if (Array.isArray(res.data)) {
+          setUsers(res.data);
         } else {
-          console.error("Data is not an array:", res.data);
+          setError("Data is not in the expected format.");
         }
-      } catch (error) {
-        console.error("Error fetching users", error);
+      } catch (err) {
+        setError("Error fetching users: " + err.message);
+      } finally {
+        setLoading(false);
       }
     };
+
     fetchUsers();
   }, []);
+
+  if (loading) {
+    return <div>Loading users...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>
