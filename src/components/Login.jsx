@@ -19,7 +19,7 @@ const Login = ({ setIsAuthenticated }) => {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
