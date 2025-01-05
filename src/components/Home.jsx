@@ -4,12 +4,15 @@ import axios from "axios";
 const Home = () => {
   const [users, setUsers] = useState([]);
 
-  // Fetch all users on component mount
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get("https://a02d-2401-4900-234e-cda-b8cf-a3c5-b118-a839.ngrok-free.app/api/auth/users");
-        setUsers(res.data);
+        if (Array.isArray(res.data)) {
+          setUsers(res.data);
+        } else {
+          console.error("Data is not an array:", res.data);
+        }
       } catch (error) {
         console.error("Error fetching users", error);
       }
