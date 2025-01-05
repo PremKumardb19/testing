@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
+import "./App.css"
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
