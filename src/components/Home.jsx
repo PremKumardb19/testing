@@ -8,8 +8,8 @@ const Home = () => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get("https://a02d-2401-4900-234e-cda-b8cf-a3c5-b118-a839.ngrok-free.app/api/auth/users");
-        if (Array.isArray(res.data)) {
-          setUsers(res.data);
+        if (Array.isArray(res)) {
+          setUsers(res);
         } else {
           console.error("Data is not an array:", res.data);
         }
