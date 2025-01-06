@@ -10,7 +10,7 @@ const Register = () => {
   const navigate=useNavigate()
 
   const handleRegister = async () => {
-    const res = await axios.post("https://a02d-2401-4900-234e-cda-b8cf-a3c5-b118-a839.ngrok-free.app/api/auth/register", {
+    const res = await axios.post("https://8206-2409-40f4-101b-3012-b1b2-b6cb-64af-33b.ngrok-free.app/api/auth/register", {
       name,
       email,
       password,
