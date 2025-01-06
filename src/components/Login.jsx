@@ -8,7 +8,7 @@ const Login = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await axios.post("https://8206-2409-40f4-101b-3012-b1b2-b6cb-64af-33b.ngrok-free.app/api/auth/login", {
+    const res = await axios.post(" https://0be0-2409-40f4-101b-3012-e9cd-701d-93f4-2ece.ngrok-free.app/api/auth/login", {
       email,
       password,
     });
