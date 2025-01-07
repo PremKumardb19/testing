@@ -10,7 +10,7 @@ const Home = () => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          " https://0be0-2409-40f4-101b-3012-e9cd-701d-93f4-2ece.ngrok-free.app/api/auth/users",
+          "https://fa0b-2401-4900-2348-813f-4d09-12ff-2325-13b.ngrok-free.app/api/auth/users",
           {
             headers: {
               "ngrok-skip-browser-warning": "true", // Skip ngrok warning page
